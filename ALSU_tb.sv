@@ -40,7 +40,7 @@ module ALSU_tb ();
   );
   task check(signed [5:0] out, out_tb, unsigned [15:0] leds, leds_tb);
     @(negedge clk);
-    if (out == out_tb && leds == leds_tb) begin
+    if (out === out_tb && leds === leds_tb) begin
       $display("Correct:opcode=%d out=%0d  out_tb=%0d   leds=%h  leds_tb=%h", opcode_reg, out,
                out_tb, leds, leds_tb);
       correct_counter = correct_counter + 1;
@@ -177,3 +177,4 @@ module ALSU_tb ();
     $stop;
   end
 endmodule
+
